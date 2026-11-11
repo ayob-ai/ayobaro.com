@@ -243,4 +243,14 @@ body:not(.home) .pt+section{margin-top:0}
 
 .btn,.lk a,.pb,.mb{transition:translate .35s cubic-bezier(.25,.1,.25,1),color .35s,transform .45s cubic-bezier(.2,.8,.2,1),box-shadow .35s,background .3s,border-color .3s}
 
+
+/* ───────── home: link hub (socials) ───────── */
+.soc{list-style:none;position:absolute;left:0;right:0;bottom:clamp(70px,11svh,110px);z-index:4;display:flex;flex-wrap:wrap;justify-content:center;gap:10px;padding:0 4vw}
+.soc a{position:relative;display:flex;align-items:center;gap:10px;padding:13px 22px 13px 18px;border:1px solid var(--ln);border-radius:999px;font:600 .95rem/1 var(--b);color:var(--tx);background:rgba(8,8,8,.55);-webkit-backdrop-filter:blur(18px) saturate(1.5);backdrop-filter:blur(18px) saturate(1.5);box-shadow:0 18px 50px -20px #000,inset 0 1px 0 rgba(214,222,255,.18);transition:translate .35s cubic-bezier(.25,.1,.25,1),color .35s,background .35s,border-color .35s,box-shadow .35s}
+.soc a:hover{background:var(--cv);color:#000;border-color:#fff;box-shadow:0 0 40px -4px rgba(214,222,255,.55)}
+.soc svg{width:20px;height:20px;flex:none;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+@media(prefers-reduced-motion:no-preference){.soc li{opacity:0;animation:socin .9s cubic-bezier(.2,.8,.2,1) forwards;animation-delay:calc(var(--i)*90ms + 2.1s)}
+@keyframes socin{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}}
+@media(max-width:700px){.soc{bottom:clamp(64px,10svh,90px);gap:12px}.soc a{width:48px;height:48px;padding:0;justify-content:center}.soc .l{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}}
+
 @media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
