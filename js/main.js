@@ -29,10 +29,10 @@ if(fine&&!calm){ring=d.createElement('div');ring.className='cur';dot=d.createEle
 
 /* ── scramble text on nav / buttons (soft: a short 3-letter window, slower) ── */
 const G='01#/\\<>*+=%&@',scr=el=>{if(calm||el.dataset.s)return;const o=el.textContent;el.dataset.s=1;let n=0;const id=setInterval(()=>{el.textContent=[...o].map((c,i)=>c===' '||i<n||i>=n+3?c:G[Math.random()*G.length|0]).join('');n+=.4;if(n>=o.length){clearInterval(id);el.textContent=o;delete el.dataset.s}},46)};
-$('nav a,.btn,.tags li').forEach(el=>el.addEventListener('pointerenter',()=>scr(el)));
+$('nav a,.btn,.tags li,.soc .l').forEach(el=>el.addEventListener('pointerenter',()=>scr(el)));
 
 /* ── magnetic pulls ── */
-if(fine&&!calm)$('.btn,.lk a,.pb,.mb').forEach(el=>{el.addEventListener('pointermove',e=>{const b=el.getBoundingClientRect();el.style.translate=((e.clientX-b.left-b.width/2)*.28)+'px '+((e.clientY-b.top-b.height/2)*.28)+'px'});el.addEventListener('pointerleave',()=>el.style.translate='')});
+if(fine&&!calm)$('.btn,.lk a,.pb,.mb,.soc a').forEach(el=>{el.addEventListener('pointermove',e=>{const b=el.getBoundingClientRect();el.style.translate=((e.clientX-b.left-b.width/2)*.28)+'px '+((e.clientY-b.top-b.height/2)*.28)+'px'});el.addEventListener('pointerleave',()=>el.style.translate='')});
 
 /* ── home: orbiting text ring ── */
 const hero=$('.hero')[0];
